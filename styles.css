@@ -13,11 +13,29 @@ body {
   height: 100vh;
 }
 
-/* APP CONTAINER */
+/* OUTER SHELL (CREATES LIFT) */
+.calculator-shell {
+  background: #000;
+  padding: 20px;
+}
+
+/* CALCULATOR BODY */
 .calculator {
   width: 380px;
-  background: #0b0b0b;
-  padding-bottom: 6px;
+  background: #0c0c0c;
+  border-radius: 6px;
+
+  /* subtle lift */
+  box-shadow:
+    0 8px 24px rgba(0,0,0,0.8),
+    0 2px 0 rgba(255,255,255,0.03);
+
+  /* micro texture */
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,0.015),
+      rgba(255,255,255,0.015)
+    );
 }
 
 /* DISPLAY */
@@ -49,7 +67,7 @@ body {
   gap: 6px;
   padding: 6px;
   background: #0f0f0f;
-  border-radius: 4px;
+  border-radius: 0 0 6px 6px;
 }
 
 /* BUTTON BASE */
@@ -57,54 +75,30 @@ button {
   height: 60px;
   background: #1f1f1f;
   border: none;
-  color: #fff;
+  color: #ffffff;
   font-size: 18px;
   cursor: pointer;
   outline: none;
+
+  /* subtle depth */
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.04),
-    inset 0 -1px 0 rgba(0,0,0,0.6);
+    inset 0 -1px 0 rgba(0,0,0,0.65);
 }
 
-/* INTERACTIONS */
-button:hover { background: #2a2a2a; }
-button:active { background: #3a3a3a; }
+/* INTERACTION */
+button:hover {
+  background: #2a2a2a;
+}
+
+button:active {
+  background: #3a3a3a;
+}
 
 /* EQUALS */
 .equals {
   background: #2a2a2a;
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.05),
-    inset 0 -1px 0 rgba(0,0,0,0.7);
+    inset 0 -1px 0 rgba(0,0,0,0.75);
 }
-
-/* SCI TOGGLE */
-button[data-action="toggle-sci"] {
-  font-size: 15px;
-  color: #bdbdbd;
-  background: #181818;
-}
-
-/* SCIENTIFIC ROW */
-.sci-row {
-  max-height: 0;
-  padding: 0 6px;
-  overflow: hidden;
-  transition:
-    max-height 260ms cubic-bezier(0.2, 0.8, 0.2, 1),
-    padding 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.sci-row.open {
-  max-height: 78px;
-  padding: 6px;
-}
-
-/* SCI BUTTONS */
-.sci-row button {
-  background: #1a1a1a;
-  font-size: 16px;
-}
-
-.sci-row button:hover { background: #242424; }
-.sci-row button:active { background: #303030; }
