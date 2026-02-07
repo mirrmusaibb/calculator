@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Windows Calculator (Web Replica)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="calculator">
+
+    <!-- Top Bar -->
+    <header class="top-bar">
+      <div class="title">Calculator</div>
+      <div class="mode-switch">
+        <button data-mode="standard" class="active">Standard</button>
+        <button data-mode="scientific">Scientific</button>
+        <button data-mode="programmer">Programmer</button>
+      </div>
+    </header>
+
+    <!-- Display -->
+    <section class="display">
+      <div id="expression" class="expression"></div>
+      <div id="result" class="result">0</div>
+    </section>
+
+    <!-- History -->
+    <aside class="history" id="history"></aside>
+
+    <!-- Buttons -->
+    <section class="keypad" id="keypad-standard">
+      <!-- Memory -->
+      <button data-action="mc">MC</button>
+      <button data-action="mr">MR</button>
+      <button data-action="mplus">M+</button>
+      <button data-action="mminus">M−</button>
+      <button data-action="ms">MS</button>
+
+      <!-- Controls -->
+      <button data-action="clear">C</button>
+      <button data-action="clear-entry">CE</button>
+      <button data-action="backspace">⌫</button>
+      <button data-action="divide">÷</button>
+
+      <!-- Digits -->
+      <button data-digit="7">7</button>
+      <button data-digit="8">8</button>
+      <button data-digit="9">9</button>
+      <button data-action="multiply">×</button>
+
+      <button data-digit="4">4</button>
+      <button data-digit="5">5</button>
+      <button data-digit="6">6</button>
+      <button data-action="subtract">−</button>
+
+      <button data-digit="1">1</button>
+      <button data-digit="2">2</button>
+      <button data-digit="3">3</button>
+      <button data-action="add">+</button>
+
+      <button data-action="percent">%</button>
+      <button data-digit="0">0</button>
+      <button data-action="decimal">.</button>
+      <button data-action="equals" class="equals">=</button>
+    </section>
+
+    <!-- Scientific -->
+    <section class="keypad hidden" id="keypad-scientific">
+      <button data-action="sin">sin</button>
+      <button data-action="cos">cos</button>
+      <button data-action="tan">tan</button>
+      <button data-action="sqrt">√</button>
+
+      <button data-action="pow">xʸ</button>
+      <button data-action="ln">ln</button>
+      <button data-action="log">log</button>
+      <button data-action="pi">π</button>
+    </section>
+
+    <!-- Programmer -->
+    <section class="keypad hidden" id="keypad-programmer">
+      <button data-action="hex">HEX</button>
+      <button data-action="dec">DEC</button>
+      <button data-action="oct">OCT</button>
+      <button data-action="bin">BIN</button>
+
+      <button data-action="and">AND</button>
+      <button data-action="or">OR</button>
+      <button data-action="xor">XOR</button>
+      <button data-action="not">NOT</button>
+    </section>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
