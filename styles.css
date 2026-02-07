@@ -13,56 +13,49 @@ body {
 }
 
 .calculator {
-  width: 360px;
+  width: 380px;
   background: #000;
 }
 
+/* DISPLAY */
 .display {
-  padding: 20px;
-  text-align: right;
+  padding: 18px 16px 10px;
   color: white;
 }
 
 #expression {
-  font-size: 14px;
-  color: #aaa;
-  min-height: 18px;
+  font-size: 13px;
+  color: #9a9a9a;
+  height: 16px;
 }
 
 #result {
-  font-size: 48px;
-  line-height: 1.2;
+  font-size: 56px;
+  font-weight: 500;
+  line-height: 1;
+  margin-top: 6px;
+  text-align: right;
 }
 
-.mode {
-  padding: 6px;
-}
-
-.mode button {
-  width: 100%;
-  background: #111;
-  border: none;
-  color: #ccc;
-  padding: 10px;
-  cursor: pointer;
-}
-
+/* BUTTON GRID */
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  padding: 6px;
 }
 
 button {
-  background: #222;
-  border: 1px solid #000;
+  height: 64px;
+  background: #1f1f1f;
+  border: none;
   color: white;
   font-size: 18px;
-  padding: 22px;
   cursor: pointer;
 }
 
 button:hover {
-  background: #2d2d2d;
+  background: #2a2a2a;
 }
 
 button:active {
@@ -70,9 +63,16 @@ button:active {
 }
 
 .equals {
-  background: #444;
+  background: #3b3b3b;
 }
 
+.equals:hover {
+  background: #4a4a4a;
+}
+
+/* SCI BUTTONS */
 .sci {
+  height: 52px;
+  font-size: 16px;
   display: none;
 }
