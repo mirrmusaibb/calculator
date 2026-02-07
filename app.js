@@ -69,6 +69,10 @@ document.querySelector(".buttons").addEventListener("click", e => {
     if (btn.dataset.fn === "tan") current = String(Math.tan(x));
     if (btn.dataset.fn === "sqrt") current = String(Math.sqrt(x));
   }
+const sciPanel = document.getElementById("sci-panel");
+document.getElementById("toggle-sci").onclick = () => {
+  sciPanel.classList.toggle("open");
+};
 
   update();
 });
