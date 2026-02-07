@@ -17,48 +17,43 @@
     <div id="result">0</div>
   </div>
 
-  <!-- STANDARD BUTTONS -->
-  <div class="buttons">
-
-    <button data-action="ce">CE</button>
-    <button data-action="c">C</button>
-    <button data-action="back">⌫</button>
-    <button data-op="/">÷</button>
-
-    <button data-num="7">7</button>
-    <button data-num="8">8</button>
-    <button data-num="9">9</button>
-    <button data-op="*">×</button>
-
-    <button data-num="4">4</button>
-    <button data-num="5">5</button>
-    <button data-num="6">6</button>
-    <button data-op="-">−</button>
-
-    <button data-num="1">1</button>
-    <button data-num="2">2</button>
-    <button data-num="3">3</button>
-    <button data-op="+">+</button>
-
-    <button data-action="sign">±</button>
-    <button data-num="0">0</button>
-    <button data-action="dot">.</button>
-    <button class="equals" data-action="eq">=</button>
-
-  </div>
-
-  <!-- SCIENTIFIC TOGGLE (Windows-style row) -->
-  <div class="sci-toggle">
-    <button id="toggle-sci">Scientific</button>
-  </div>
-
-  <!-- SCIENTIFIC PANEL (ANIMATED) -->
-  <div class="sci-panel" id="sci-panel">
-
+  <!-- SCIENTIFIC ROW (HIDDEN BY DEFAULT) -->
+  <div class="buttons sci-row" id="sci-row">
     <button data-fn="sin">sin</button>
     <button data-fn="cos">cos</button>
     <button data-fn="tan">tan</button>
     <button data-fn="sqrt">√</button>
+  </div>
+
+  <!-- STANDARD BUTTONS -->
+  <div class="buttons">
+
+    <button data-action="toggle-sci">Sci</button>
+    <button data-action="ce">CE</button>
+    <button data-action="c">C</button>
+    <button data-action="back">⌫</button>
+
+    <button data-num="7">7</button>
+    <button data-num="8">8</button>
+    <button data-num="9">9</button>
+    <button data-op="/">÷</button>
+
+    <button data-num="4">4</button>
+    <button data-num="5">5</button>
+    <button data-num="6">6</button>
+    <button data-op="*">×</button>
+
+    <button data-num="1">1</button>
+    <button data-num="2">2</button>
+    <button data-num="3">3</button>
+    <button data-op="-">−</button>
+
+    <button data-action="sign">±</button>
+    <button data-num="0">0</button>
+    <button data-action="dot">.</button>
+    <button data-op="+">+</button>
+
+    <button class="equals" data-action="eq">=</button>
 
   </div>
 
