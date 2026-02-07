@@ -2,97 +2,68 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Windows Calculator (Web Replica)</title>
+  <title>Calculator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div id="calculator">
 
-    <!-- Top Bar -->
-    <header class="top-bar">
-      <div class="title">Calculator</div>
-      <div class="mode-switch">
-        <button data-mode="standard" class="active">Standard</button>
-        <button data-mode="scientific">Scientific</button>
-        <button data-mode="programmer">Programmer</button>
-      </div>
-    </header>
+<div class="calculator">
 
-    <!-- Display -->
-    <section class="display">
-      <div id="expression" class="expression"></div>
-      <div id="result" class="result">0</div>
-    </section>
+  <!-- Display -->
+  <div class="display">
+    <div id="expression"></div>
+    <div id="result">0</div>
+  </div>
 
-    <!-- History -->
-    <aside class="history" id="history"></aside>
+  <!-- Mode Toggle -->
+  <div class="mode">
+    <button id="mode-btn">Scientific</button>
+  </div>
 
-    <!-- Buttons -->
-    <section class="keypad" id="keypad-standard">
-      <!-- Memory -->
-      <button data-action="mc">MC</button>
-      <button data-action="mr">MR</button>
-      <button data-action="mplus">M+</button>
-      <button data-action="mminus">M−</button>
-      <button data-action="ms">MS</button>
+  <!-- Buttons -->
+  <div class="buttons" id="buttons">
 
-      <!-- Controls -->
-      <button data-action="clear">C</button>
-      <button data-action="clear-entry">CE</button>
-      <button data-action="backspace">⌫</button>
-      <button data-action="divide">÷</button>
+    <!-- Row 1 -->
+    <button data-action="ce">CE</button>
+    <button data-action="c">C</button>
+    <button data-action="back">⌫</button>
+    <button data-op="/">÷</button>
 
-      <!-- Digits -->
-      <button data-digit="7">7</button>
-      <button data-digit="8">8</button>
-      <button data-digit="9">9</button>
-      <button data-action="multiply">×</button>
+    <!-- Row 2 -->
+    <button data-num="7">7</button>
+    <button data-num="8">8</button>
+    <button data-num="9">9</button>
+    <button data-op="*">×</button>
 
-      <button data-digit="4">4</button>
-      <button data-digit="5">5</button>
-      <button data-digit="6">6</button>
-      <button data-action="subtract">−</button>
+    <!-- Row 3 -->
+    <button data-num="4">4</button>
+    <button data-num="5">5</button>
+    <button data-num="6">6</button>
+    <button data-op="-">−</button>
 
-      <button data-digit="1">1</button>
-      <button data-digit="2">2</button>
-      <button data-digit="3">3</button>
-      <button data-action="add">+</button>
+    <!-- Row 4 -->
+    <button data-num="1">1</button>
+    <button data-num="2">2</button>
+    <button data-num="3">3</button>
+    <button data-op="+">+</button>
 
-      <button data-action="percent">%</button>
-      <button data-digit="0">0</button>
-      <button data-action="decimal">.</button>
-      <button data-action="equals" class="equals">=</button>
-    </section>
+    <!-- Row 5 -->
+    <button data-action="sign">±</button>
+    <button data-num="0">0</button>
+    <button data-action="dot">.</button>
+    <button data-action="eq" class="equals">=</button>
 
-    <!-- Scientific -->
-    <section class="keypad hidden" id="keypad-scientific">
-      <button data-action="sin">sin</button>
-      <button data-action="cos">cos</button>
-      <button data-action="tan">tan</button>
-      <button data-action="sqrt">√</button>
-
-      <button data-action="pow">xʸ</button>
-      <button data-action="ln">ln</button>
-      <button data-action="log">log</button>
-      <button data-action="pi">π</button>
-    </section>
-
-    <!-- Programmer -->
-    <section class="keypad hidden" id="keypad-programmer">
-      <button data-action="hex">HEX</button>
-      <button data-action="dec">DEC</button>
-      <button data-action="oct">OCT</button>
-      <button data-action="bin">BIN</button>
-
-      <button data-action="and">AND</button>
-      <button data-action="or">OR</button>
-      <button data-action="xor">XOR</button>
-      <button data-action="not">NOT</button>
-    </section>
+    <!-- Scientific (hidden initially) -->
+    <button class="sci" data-fn="sin">sin</button>
+    <button class="sci" data-fn="cos">cos</button>
+    <button class="sci" data-fn="tan">tan</button>
+    <button class="sci" data-fn="sqrt">√</button>
 
   </div>
 
-  <script src="app.js"></script>
+</div>
+
+<script src="app.js"></script>
 </body>
 </html>
