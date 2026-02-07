@@ -1,64 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Calculator</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8">
+<title>Calculator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
 <div class="calculator">
 
-  <!-- Display -->
+  <!-- DISPLAY -->
   <div class="display">
     <div id="expression"></div>
     <div id="result">0</div>
   </div>
 
-  <!-- Mode Toggle -->
-  <div class="mode">
-    <button id="mode-btn">Scientific</button>
-  </div>
+  <!-- STANDARD BUTTONS -->
+  <div class="buttons">
 
-  <!-- Buttons -->
-  <div class="buttons" id="buttons">
-
-    <!-- Row 1 -->
     <button data-action="ce">CE</button>
     <button data-action="c">C</button>
     <button data-action="back">⌫</button>
     <button data-op="/">÷</button>
 
-    <!-- Row 2 -->
     <button data-num="7">7</button>
     <button data-num="8">8</button>
     <button data-num="9">9</button>
     <button data-op="*">×</button>
 
-    <!-- Row 3 -->
     <button data-num="4">4</button>
     <button data-num="5">5</button>
     <button data-num="6">6</button>
     <button data-op="-">−</button>
 
-    <!-- Row 4 -->
     <button data-num="1">1</button>
     <button data-num="2">2</button>
     <button data-num="3">3</button>
     <button data-op="+">+</button>
 
-    <!-- Row 5 -->
     <button data-action="sign">±</button>
     <button data-num="0">0</button>
     <button data-action="dot">.</button>
-    <button data-action="eq" class="equals">=</button>
+    <button class="equals" data-action="eq">=</button>
 
-    <!-- Scientific (hidden initially) -->
-    <button class="sci" data-fn="sin">sin</button>
-    <button class="sci" data-fn="cos">cos</button>
-    <button class="sci" data-fn="tan">tan</button>
-    <button class="sci" data-fn="sqrt">√</button>
+  </div>
+
+  <!-- SCIENTIFIC TOGGLE (Windows-style row) -->
+  <div class="sci-toggle">
+    <button id="toggle-sci">Scientific</button>
+  </div>
+
+  <!-- SCIENTIFIC PANEL (ANIMATED) -->
+  <div class="sci-panel" id="sci-panel">
+
+    <button data-fn="sin">sin</button>
+    <button data-fn="cos">cos</button>
+    <button data-fn="tan">tan</button>
+    <button data-fn="sqrt">√</button>
 
   </div>
 
