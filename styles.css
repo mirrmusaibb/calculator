@@ -41,7 +41,7 @@ body {
   word-break: break-all;
 }
 
-/* BUTTON GRID (STANDARD + SCI SHARE THIS) */
+/* BUTTON GRID */
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -49,9 +49,9 @@ body {
   padding: 6px;
 }
 
-/* BUTTON BASE */
+/* BUTTON BASE (UNIFIED HEIGHT) */
 button {
-  height: 62px;                 /* slightly tighter than before */
+  height: 60px;
   background: #1f1f1f;
   border: none;
   color: #ffffff;
@@ -69,46 +69,46 @@ button:active {
   background: #3a3a3a;
 }
 
-/* EQUALS (SUBTLE, NOT COLORFUL) */
+/* EQUALS — QUIETER */
 .equals {
-  background: #3b3b3b;
+  background: #2b2b2b;
 }
 
 .equals:hover {
-  background: #4a4a4a;
+  background: #353535;
 }
 
-/* SCIENTIFIC ROW — EMBEDDED, NOT SEPARATE UI */
+/* SCIENTIFIC ROW */
 .sci-row {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.22s ease;
+  transition: max-height 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-/* when opened */
+/* EXACT HEIGHT: 60px button + 6px gap + 12px padding */
 .sci-row.open {
-  max-height: 70px; /* exactly one row */
+  max-height: 78px;
 }
 
-/* SCIENTIFIC BUTTONS — SAME STYLE, SLIGHTLY SMALLER TEXT */
+/* SCI BUTTONS — SAME HEIGHT, LOWER CONTRAST */
 .sci-row button {
-  height: 54px;
+  height: 60px;
   font-size: 16px;
-  background: #1c1c1c;
+  background: #1a1a1a;
 }
 
 .sci-row button:hover {
-  background: #262626;
+  background: #242424;
 }
 
 .sci-row button:active {
-  background: #333333;
+  background: #303030;
 }
 
-/* SCI TOGGLE BUTTON — LOOKS LIKE A NORMAL KEY */
+/* SCI TOGGLE — LOOKS LIKE A NORMAL KEY */
 button[data-action="toggle-sci"] {
   font-size: 15px;
-  color: #cccccc;
+  color: #bdbdbd;
   background: #181818;
 }
 
