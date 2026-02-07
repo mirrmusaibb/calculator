@@ -1,6 +1,5 @@
 const result = document.getElementById("result");
 const expr = document.getElementById("expression");
-const sciRow = document.getElementById("sci-row");
 
 let current = "0";
 let previous = null;
@@ -53,18 +52,7 @@ function evaluate() {
   justEvaluated = true;
 }
 
-function applyFunction(fn) {
-  let x = Number(current);
-  if (fn === "sin") current = String(Math.sin(x));
-  if (fn === "cos") current = String(Math.cos(x));
-  if (fn === "tan") current = String(Math.tan(x));
-  if (fn === "sqrt") current = String(Math.sqrt(x));
-  previous = null;
-  operator = null;
-  justEvaluated = true;
-}
-
-/* MOUSE */
+/* MOUSE INPUT */
 document.body.addEventListener("click", e => {
   const btn = e.target.closest("button");
   if (!btn) return;
@@ -81,33 +69,46 @@ document.body.addEventListener("click", e => {
   }
 
   if (btn.dataset.action === "ce") current = "0";
-  if (btn.dataset.action === "back")
-    current = current.length > 1 ? current.slice(0, -1) : "0";
 
-  if (btn.dataset.action === "dot" && !current.includes(".")) current += ".";
-  if (btn.dataset.action === "sign") current = String(-Number(current));
-  if (btn.dataset.action === "toggle-sci") sciRow.classList.toggle("open");
-  if (btn.dataset.fn) applyFunction(btn.dataset.fn);
+  if (btn.dataset.action === "back") {
+    current = current.length > 1 ? current.slice(0, -1) : "0";
+  }
+
+  if (btn.dataset.action === "dot" && !current.includes(".")) {
+    current += ".";
+  }
+
+  if (btn.dataset.action === "sign") {
+    current = String(-Number(current));
+  }
 
   update();
 });
 
-/* KEYBOARD */
+/* KEYBOARD SUPPORT */
 document.addEventListener("keydown", e => {
   if (e.key >= "0" && e.key <= "9") inputDigit(e.key);
   if (["+","-","*","/"].includes(e.key)) inputOperator(e.key);
-  if (e.key === "Enter") { e.preventDefault(); evaluate(); }
-  if (e.key === "Backspace")
-    current = current.length > 1 ? current.slice(0, -1) : "0";
-  if (e.key === "Escape") {
-    current = "0"; previous = null; operator = null; justEvaluated = false;
-  }
-  if (e.key === "." && !current.includes(".")) current += ".";
 
-  if (e.key.toLowerCase() === "s") applyFunction("sin");
-  if (e.key.toLowerCase() === "c") applyFunction("cos");
-  if (e.key.toLowerCase() === "t") applyFunction("tan");
-  if (e.key.toLowerCase() === "r") applyFunction("sqrt");
+  if (e.key === "Enter") {
+    e.preventDefault();
+    evaluate();
+  }
+
+  if (e.key === "Backspace") {
+    current = current.length > 1 ? current.slice(0, -1) : "0";
+  }
+
+  if (e.key === "Escape") {
+    current = "0";
+    previous = null;
+    operator = null;
+    justEvaluated = false;
+  }
+
+  if (e.key === "." && !current.includes(".")) {
+    current += ".";
+  }
 
   update();
 });
